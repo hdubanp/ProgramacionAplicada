@@ -1,23 +1,12 @@
-# for i in range (1,21):
-#     residual = i%2
-#     if residual == 0:
-#         print(f'{i} is even')
-#     else:
-#         #print(f'{i} is odd')
-#         print(str(i) + ' is odd')
+a = input("Digite el numero menor del rango: ")
+a = int(a)
+b = input("Digite el numero mayor del rango: ")
+b = int(b)
 
-# for i in range (0,6):
-#     result = i**3
-#     print(result)
-
-times = input("Enter a number of times: ")
-times = float(times)
-times = int(times)
-print(type(times))
-print(times)
-
-if times == 0:
-    print("Don't do anything")
-else:
-    for i in range(1,times+1):
-        print("i = ", i)
+for i in range (a,b):
+    residual = i%2
+    if residual == 0:
+        print (i, "par")
+    else:
+       print (str(i) + ' es impar')
+        
