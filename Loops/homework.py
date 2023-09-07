@@ -1,19 +1,19 @@
-a = input("Enter a number: ")
+a = input("digite el primer numero entero: ")
 a = int(a)
-b = input("Enter b number: ")
+b = input("digite el segundo numero flotante: ")
 b = float(b)
 c = a + b
 
 if a == b:
-    print("equal")
+    print("igual")
 else:
-    print("Different")
+    print("Diferente")
 
-print("Type of a is: ", type(a))
-print("Type of b is: ", type(b))
+print("A es del tipo: ", type(a))
+print("B es del tipo: ", type(b))
 print("c = ", c)
 
 if type(a) == type(b):
-    print("a and b are of the same type")
+    print("a y b son del mismo tipo")
 else:
-    print("a and b are of different type")
+    print("a y b son de diferente tipo")
