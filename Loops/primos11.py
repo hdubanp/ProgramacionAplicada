@@ -1,7 +1,12 @@
 import time
 inicio = time.time()
 
-for i in range(1,31):
+a = input("Digite el numero menor del rango: ")
+a = int(a)
+b = input("Digite el numero mayor del rango: ")
+b = int(b)
+
+for i in range(a,b):
     conta = 0
     for n in range(1, i+1):
         residue = i%n
