@@ -80,11 +80,11 @@ print(drinks_to_cafeeine)
 ------------------------------------------------------------------------------------------
 #creamos una lista 
 drinks = ["20", "54", "48", "92"]
-#le asignamos valores
+#creamos otra lista 
 caffeine =["espresso", "chai", "decaf", "drip"]
 #agrupamos
 zipped_drinks =zip(drinks , caffeine)
-#creamos un ciclo for para que 
+#creamos un diccionario en donde "drinks" se vuelve los elementos y "caffeine" los valores de estos elementos 
 drinks_to_cafeeine ={ key: value for key, value in zipped_drinks}
 
 #imprimimos
