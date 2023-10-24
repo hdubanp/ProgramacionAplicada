@@ -63,3 +63,35 @@ perimetro = triangulo.calcular_perimetro()
 # Imprimir los resultados
 print("Área del triángulo rectángulo:", area)
 print("Perímetro del triángulo rectángulo:", perimetro)
+
+***********************RECTANGULO**********************************
+
+class Rectangulo:
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
+
+    def calcular_area(self):
+        area = self.base * self.altura
+        return area
+
+    def calcular_perimetro(self):
+        perimetro = 2 * (self.base + self.altura)
+        return perimetro
+
+# Obtener las dimensiones del rectángulo desde la consola
+base = float(input("Ingresa la longitud de la base del rectángulo: "))
+altura = float(input("Ingresa la altura del rectángulo: "))
+
+# Crear una instancia de Rectangulo
+rectangulo = Rectangulo(base, altura)
+
+# Calcular el área y el perímetro del rectángulo
+area = rectangulo.calcular_area()
+perimetro = rectangulo.calcular_perimetro()
+
+# Imprimir los resultados
+print("Área del rectángulo:", area)
+print("Perímetro del rectángulo:", perimetro)
+
+****************************************************************************
