@@ -1,1 +1,37 @@
+*******************CIRCULO******************************
 
+class Circulo:
+    pi = 3.14
+
+    def __init__(self, diametro):
+        print("Creando un círculo con un diámetro de {d}".format(d=diametro))
+        self.radio = diametro / 2
+
+    def circunferencia(self):
+        return 2 * self.pi * self.radio
+
+    def area(self):
+        return self.pi * self.radio**2
+
+    def perimetro(self):
+        return 2 * self.pi * self.radio
+
+# Crear instancias de círculo
+pizza_mediana = Circulo(12)
+mesa_de_enseñanza = Circulo(36)
+sala_redonda = Circulo(11460)
+
+# Imprimir circunferencia, área y perímetro
+print("Circunferencia de la pizza mediana:\n", pizza_mediana.circunferencia())
+print("Área de la pizza mediana: \n", pizza_mediana.area())
+print("Perímetro de la pizza mediana:\n", pizza_mediana.perimetro())
+
+print("Circunferencia de la mesa de enseñanza:\n", mesa_de_enseñanza.circunferencia())
+print("Área de la mesa de enseñanza:\n", mesa_de_enseñanza.area())
+print("Perímetro de la mesa de enseñanza:\n", mesa_de_enseñanza.perimetro())
+
+print("Circunferencia de la sala redonda:\n", sala_redonda.circunferencia())
+print("Área de la sala redonda:\n", sala_redonda.area())
+print("Perímetro de la sala redonda:\n", sala_redonda.perimetro())
+
+******************
