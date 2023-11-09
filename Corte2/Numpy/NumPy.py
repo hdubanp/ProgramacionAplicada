@@ -110,5 +110,122 @@ print(b.ndim)
 print(c.ndim)
 print(d.ndim)
 
----------------------------3-------------------------------------------
+---------------------------NumPy Array Indexing-------------------------------------------
+
+La indexación de matrices es lo mismo que acceder a un elemento de matriz.
+
+Puede acceder a un elemento de matriz consultando su número de índice.
+
+Los índices en las matrices NumPy comienzan con 0, lo que significa que el primer elemento tiene el índice 0 y el segundo tiene el índice 1, etc.
+
+--Ejemplo 1
+Obtenga el primer elemento de la siguiente matriz:
+
+import numpy as np
+
+arr = np.array([1, 2, 3, 4])
+
+print(arr[0])
+
+-Obtenga el segundo elemento de la siguiente matriz.
+
+import numpy as np
+
+arr = np.array([1, 2, 3, 4])
+
+print(arr[1])
+
+--Ejemplo 2
+Ejemplo
+Obtenga el tercer y cuarto elemento de la siguiente matriz y agréguelos.
+
+import numpy as np
+
+arr = np.array([1, 2, 3, 4])
+
+print(arr[2] + arr[3])
+
+-Ejemplo 3
+
+Acceder a matrices 2-D
+Para acceder a elementos de matrices 2-D, podemos usar números enteros separados por comas que representan la dimensión y el índice del elemento.
+
+Piense en matrices 2D como una tabla con filas y columnas, donde la dimensión representa la fila y el índice representa la columna.
+
+Ejemplo 
+Acceda al elemento en la primera fila, segunda columna:
+
+import numpy as np
+
+arr = np.array([[1,2,3,4,5], [6,7,8,9,10]])
+
+print('2nd element on 1st row: ', arr[0, 1])
+
+Ejemplo
+Acceda al elemento en la 2.ª fila, 5.ª columna:
+
+import numpy as np
+
+arr = np.array([[1,2,3,4,5], [6,7,8,9,10]])
+
+print('5th element on 2nd row: ', arr[1, 4])
+
+-Ejemplo 4
+Acceda a matrices 3-D
+Para acceder a elementos de matrices 3-D, podemos usar números enteros separados por comas que representan las dimensiones y el índice del elemento.
+
+Ejemplo
+Accede al tercer elemento de la segunda matriz de la primera matriz:
+
+import numpy as np
+
+arr = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+
+print(arr[0, 1, 2])
+Ejemplo explicado
+arr[0, 1, 2]imprime el valor 6.
+
+Y es por esto:
+
+El primer número representa la primera dimensión, que contiene dos matrices:
+[[1, 2, 3], [4, 5, 6]]
+y:
+[[7, 8, 9], [10, 11, 12]]
+Desde seleccionamos 0, nos queda el primer array:
+[[1, 2, 3], [4, 5, 6]]
+
+El segundo número representa la segunda dimensión, que también contiene dos matrices:
+[1, 2, 3]
+y:
+[4, 5, 6]
+Como seleccionamos 1, nos queda la segunda matriz:
+[4, 5, 6]
+
+El tercer número representa la tercera dimensión, que contiene tres valores:
+4
+5
+6
+Como seleccionamos 2, terminamos con el tercer valor:
+6
+
+-Ejemplo 5
+Indexación negativa
+Utilice indexación negativa para acceder a una matriz desde el final.
+
+Ejemplo
+Imprime el último elemento de la segunda matriz:
+
+import numpy as np
+
+arr = np.array([[1,2,3,4,5], [6,7,8,9,10]])
+
+print('Last element from 2nd dim: ', arr[1, -1])
+
+------------------------------NumPy Data Types----------------------------------
+
+
+
+
+
+
 
