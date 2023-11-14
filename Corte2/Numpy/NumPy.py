@@ -535,6 +535,154 @@ En el ejemplo anterior en el índice 4 tenemos el valor 4, por lo que podemos de
 
 --------------------------NumPy Array Reshaping-----------------------------
 
+Reformando matrices
+Reformar significa cambiar la forma de una matriz.
+
+La forma de una matriz es el número de elementos en cada dimensión.
+
+Al remodelar podemos agregar o eliminar dimensiones o cambiar la cantidad de elementos en cada dimensión.
+
+Reformar de 1-D a 2-D
+
+-Ejemplo 1
+Convierta la siguiente matriz 1D con 12 elementos en una matriz 2D.
+
+La dimensión más externa tendrá 4 matrices, cada una con 3 elementos:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz 1D con 12 elementos
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+
+# Remodelar (reshape) la matriz 1D en una matriz 2D con 4 filas y 3 columnas
+newarr = arr.reshape(4, 3)
+
+# Imprimir la matriz 2D resultante
+print(newarr)
+
+Reformar de 1-D a 3-D
+
+-Ejemplo 2
+Convierta la siguiente matriz 1D con 12 elementos en una matriz 3D.
+
+La dimensión más externa tendrá 2 matrices que contienen 3 matrices, cada una con 2 elementos:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz 1D con 12 elementos
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+
+# Remodelar (reshape) la matriz 1D en una matriz 3D con dimensiones 2x3x2
+newarr = arr.reshape(2, 3, 2)
+
+# Imprimir la matriz 3D resultante
+print(newarr)
+
+¿Podemos remodelarnos en cualquier forma?
+Sí, siempre y cuando los elementos necesarios para remodelar sean iguales en ambas formas.
+
+Podemos remodelar una matriz 1D de 8 elementos en una matriz 2D de 4 elementos en 2 filas, 
+pero no podemos remodelarla en una matriz 2D de 3 elementos y 3 filas,
+ya que eso requeriría 3x3 = 9 elementos.
+
+-Ejemplo 3
+Intente convertir una matriz 1D con 8 elementos en una matriz 2D con 3 elementos en cada dimensión (generará un error):
+
+import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+
+newarr = arr.reshape(3, 3)
+
+print(newarr)
+
+-Ejemplo 4
+Compruebe si la matriz devuelta es una copia o una vista:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz 1D con 8 elementos
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+
+# Remodelar (reshape) la matriz 1D en una matriz 2D de dimensiones 2x4
+reshaped_arr = arr.reshape(2, 4)
+
+# Imprimir el atributo 'base' de la matriz resultante
+print(reshaped_arr.base)
+El ejemplo anterior devuelve la matriz original, por lo que es una vista.
+
+Dimensión desconocida
+Se le permite tener una dimensión "desconocida".
+
+Lo que significa que no es necesario especificar un número exacto para una de las dimensiones en el método de remodelación.
+
+Pase -1como valor y NumPy calculará este número por usted.
+
+-Ejemplo 5
+Convierta una matriz 1D con 8 elementos en una matriz 3D con elementos 2x2:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz 1D con 8 elementos
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+
+# Remodelar (reshape) la matriz 1D en una matriz 3D con dimensiones 2x2x(-1)
+newarr = arr.reshape(2, 2, -1)
+
+# Imprimir la matriz 3D resultante
+print(newarr)
+
+Nota: No podemos pasar -1a más de una dimensión.
+
+Aplanando las matrices
+Aplanar una matriz significa convertir una matriz multidimensional en una matriz 1D.
+
+Podemos usar reshape(-1)para hacer esto.
+
+-Ejemplo 6
+Convierta la matriz en una matriz 1D:
+
+  # Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz 2D
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+
+# Remodelar (reshape) la matriz 2D en una matriz 1D utilizando -1
+newarr = arr.reshape(-1)
+
+# Imprimir la matriz 1D resultante
+print(newarr)
+
+Nota: Hay muchas funciones para cambiar las formas de las matrices en numpy flatteny raveltambién para reorganizar los elementos rot90, 
+etc. Estas se flipencuentran en la sección Intermedia a Avanzada de numpy.fliplrflipud
+
+--------------------------NumPy Array Iterating------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
