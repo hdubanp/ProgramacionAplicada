@@ -223,9 +223,98 @@ print('Last element from 2nd dim: ', arr[1, -1])
 
 ------------------------------NumPy Data Types----------------------------------
 
+---Tipos de datos en Python---
+Por defecto, Python tiene estos tipos de datos:
+
+strings- se utiliza para representar datos de texto, el texto aparece entre comillas. por ejemplo "ABCD"
+integer- Se utiliza para representar números enteros. por ejemplo -1, -2, -3
+float- utilizado para representar números reales. por ejemplo, 1,2, 42,42
+boolean- utilizado para representar Verdadero o Falso.
+complex- utilizado para representar números complejos. por ejemplo, 1,0 + 2,0j, 1,5 + 2,5j
+
+---Tipos de datos en NumPy---
+NumPy tiene algunos tipos de datos adicionales y se refieren a tipos de datos con un carácter, como inúmeros enteros, unúmeros enteros sin signo, etc.
+
+A continuación se muestra una lista de todos los tipos de datos en NumPy y los caracteres utilizados para representarlos.
+
+i- número entero
+b- booleano
+u- entero sin signo
+f- flotar
+c- flotador complejo
+m- delta de tiempo
+M- fecha y hora
+O- objeto
+S- cadena
+U- cadena unicode
+V- fragmento fijo de memoria para otro tipo (nulo)
+
+El objeto de matriz NumPy tiene una propiedad llamada dtype que devuelve el tipo de datos de la matriz:
+
+-Ejemplo 1
+
+Obtenga su propio servidor Python
+Obtenga el tipo de datos de un objeto de matriz:
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy a partir de una lista
+arr = np.array([1, 2, 3, 4])
+
+# Imprimir el tipo de datos de la matriz utilizando el atributo 'dtype'
+print(arr.dtype)
+
+-Ejemplo 2
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy a partir de una lista de cadenas
+arr = np.array(['apple', 'banana', 'cherry'])
+
+# Imprimir el tipo de datos de la matriz utilizando el atributo 'dtype'
+print(arr.dtype)
+
+Crear matrices con un tipo de datos definido
+Usamos la array()función para crear matrices, esta función puede tomar un argumento opcional: dtype que nos permite definir el tipo de datos esperado de los elementos de la matriz:
+
+-Ejemplo 3
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy a partir de una lista de enteros con tipo de datos de cadena de bytes ('S')
+arr = np.array([1, 2, 3, 4], dtype='S')
+
+# Imprimir la matriz
+print(arr)
+
+# Imprimir el tipo de datos de la matriz utilizando el atributo 'dtype'
+print(arr.dtype)
+
+Para i, u, fy Stambién Upodemos definir el tamaño.
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
