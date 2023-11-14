@@ -837,9 +837,148 @@ for idx, x in np.ndenumerate(arr):
   print(idx, x)
 
 ----------------------------------NumPy Joining Array---------------------------------
+Unirse a matrices NumPy
+Unir significa poner el contenido de dos o más matrices en una sola matriz.
+
+En SQL unimos tablas en función de una clave, mientras que en NumPy unimos arrays por ejes.
+
+Pasamos una secuencia de arrays que queremos unir a la concatenate()función, junto con el eje. 
+Si el eje no se pasa explícitamente, se toma como 0.
+
+-Ejemplo 1
+Unir dos matrices
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear dos matrices NumPy unidimensionales
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+
+# Concatenar las dos matrices utilizando np.concatenate()
+arr = np.concatenate((arr1, arr2))
+
+# Imprimir la matriz resultante
+print(arr)
+
+-Ejemplo 2
+Une dos matrices 2-D a lo largo de filas (eje=1):
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear dos matrices NumPy bidimensionales
+arr1 = np.array([[1, 2], [3, 4]])
+arr2 = np.array([[5, 6], [7, 8]])
+
+# Concatenar las dos matrices a lo largo del eje 1 utilizando np.concatenate()
+arr = np.concatenate((arr1, arr2), axis=1)
+
+# Imprimir la matriz resultante
+print(arr)
+
+Unir matrices usando funciones de pila
+El apilamiento es lo mismo que la concatenación, la única diferencia es que el apilamiento se realiza a lo largo de un nuevo eje.
+Podemos concatenar dos matrices 1-D a lo largo del segundo eje, lo que daría como resultado colocarlas una sobre la otra, 
+es decir. apilado.
+Pasamos una secuencia de arrays que queremos unir al stack()método junto con el eje. 
+Si el eje no se pasa explícitamente, se toma como 0.
+
+-Ejemplo 3
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear dos matrices NumPy unidimensionales
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+
+# Apilar las dos matrices a lo largo del nuevo eje creado utilizando np.stack()
+arr = np.stack((arr1, arr2), axis=1)
+
+# Imprimir la matriz resultante
+print(arr)
+
+Apilado a lo largo de filas
+NumPy proporciona una función auxiliar: hstack() apilar a lo largo de filas.
+
+-Ejemplo 4
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear dos matrices NumPy unidimensionales
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+
+# Apilar las dos matrices horizontalmente utilizando np.hstack()
+arr = np.hstack((arr1, arr2))
+
+# Imprimir la matriz resultante
+print(arr)
+
+Apilado a lo largo de columnas
+NumPy proporciona una función auxiliar: vstack()  apilar a lo largo de columnas.
+
+-Ejemplo 5
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear dos matrices NumPy unidimensionales
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+
+# Apilar las dos matrices verticalmente utilizando np.vstack()
+arr = np.vstack((arr1, arr2))
+
+# Imprimir la matriz resultante
+print(arr)
+
+Apilado a lo largo de la altura (profundidad)
+NumPy proporciona una función auxiliar: dstack() apilar a lo largo de la altura, que es lo mismo que la profundidad.
+
+-Ejemplo 6
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear dos matrices NumPy unidimensionales
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+
+# Apilar las dos matrices a lo largo del tercer eje utilizando np.dstack()
+arr = np.dstack((arr1, arr2))
+
+# Imprimir la matriz resultante
+print(arr)
+
+------------------------------Matriz de división NumPy---------------------------
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 
