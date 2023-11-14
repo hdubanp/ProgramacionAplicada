@@ -663,11 +663,180 @@ etc. Estas se flipencuentran en la sección Intermedia a Avanzada de numpy.flipl
 
 --------------------------NumPy Array Iterating------------------------------
 
+Iterando matrices
+Iterar significa recorrer elementos uno por uno.
 
+Mientras tratamos con matrices multidimensionales en numpy, podemos hacerlo usando forun bucle básico de Python.
 
+Si iteramos en una matriz 1-D, pasará por cada elemento uno por uno.
 
+-Ejemplo 1
+Itere sobre los elementos de la siguiente matriz 1-D:
 
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
 
+# Crear una matriz NumPy unidimensional
+arr = np.array([1, 2, 3])
+
+# Iterar sobre cada elemento de la matriz e imprimirlo
+for x in arr:
+  print(x)
+
+Iterando matrices 2-D
+En una matriz 2-D, pasará por todas las filas.
+
+-Ejemplo 2
+Itere sobre los elementos de la siguiente matriz 2-D:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy bidimensional
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+
+# Iterar sobre cada fila de la matriz e imprimirla
+for x in arr:
+  print(x)
+
+Si iteramos en una matriz n -D, pasará por la dimensión n-1 una por una.
+
+Para devolver los valores reales, los escalares, tenemos que iterar las matrices en cada dimensión.
+
+-Ejemplo 3
+Iterar sobre cada elemento escalar de la matriz 2-D:
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy bidimensional
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+
+# Iterar sobre cada fila de la matriz
+for x in arr:
+  # Iterar sobre cada elemento en la fila e imprimirlo
+  for y in x:
+    print(y)
+Iterando matrices 3-D
+En una matriz 3-D, pasará por todas las matrices 2-D.
+
+-Ejemplo 4
+Itere sobre los elementos de la siguiente matriz 3D:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy tridimensional
+arr = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+
+# Iterar sobre cada "capa" de la matriz e imprimirla
+for x in arr:
+  print(x)
+Para devolver los valores reales, los escalares, tenemos que iterar las matrices en cada dimensión.
+
+-Ejemplo 5
+Iterar hasta los escalares:
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy tridimensional
+arr = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+
+# Iterar sobre cada "capa" de la matriz
+for x in arr:
+  # Iterar sobre cada fila en la capa
+  for y in x:
+    # Iterar sobre cada elemento en la fila e imprimirlo
+    for z in y:
+      print(z)
+
+Iterando matrices usando nditer()
+La función nditer()es una función de ayuda que se puede utilizar desde iteraciones muy básicas hasta iteraciones muy avanzadas. 
+Resuelve algunos problemas básicos que enfrentamos en la iteración, repasémoslo con ejemplos.
+
+Iterando en cada elemento escalar
+En los bucles básicos for, al iterar a través de cada escalar de una matriz, 
+necesitamos usar n for bucles que pueden ser difíciles de escribir para matrices con una dimensionalidad muy alta.
+
+-Ejemplo 6
+Itere a través de la siguiente matriz 3-D:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy tridimensional
+arr = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+
+# Utilizar np.nditer() para iterar sobre todos los elementos de la matriz
+for x in np.nditer(arr):
+  print(x)
+
+Matriz iterativa con diferentes tipos de datos
+Podemos usar op_dtypesun argumento y pasarle el tipo de datos esperado para cambiar el tipo de datos de los elementos mientras iteramos.
+NumPy no cambia el tipo de datos del elemento en el lugar (donde el elemento está en una matriz), 
+por lo que necesita otro espacio para realizar esta acción, ese espacio adicional se llama buffer, 
+y para habilitarlo nditer()pasamos flags=['buffered'].
+
+-Ejemplo 7
+Iterar a través de la matriz como una cadena:
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy unidimensional
+arr = np.array([1, 2, 3])
+
+# Utilizar np.nditer() para iterar sobre los elementos de la matriz
+# con opciones adicionales 'buffered' y op_dtypes=['S']
+for x in np.nditer(arr, flags=['buffered'], op_dtypes=['S']):
+  print(x)
+
+Iterando con diferentes tamaños de paso
+Podemos usar filtrado y seguido de iteración.
+
+-Ejemplo 8
+Itere a través de cada elemento escalar de la matriz 2D omitiendo 1 elemento:
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy bidimensional
+arr = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+
+# Utilizar np.nditer() para iterar sobre una vista específica de la matriz
+for x in np.nditer(arr[:, ::2]):
+  print(x)
+
+Iteración enumerada usando ndenumerate()
+Enumeración significa mencionar el número de secuencia de algo uno por uno.
+
+A veces requerimos el índice correspondiente del elemento mientras iteramos, 
+el ndenumerate()método se puede utilizar para esos casos de uso.
+
+-Ejemplo 9
+Enumere los siguientes elementos de matrices 1D:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy unidimensional
+arr = np.array([1, 2, 3])
+
+# Utilizar np.ndenumerate() para iterar sobre los índices y elementos de la matriz
+for idx, x in np.ndenumerate(arr):
+  print(idx, x)
+
+-Ejemplo 10
+Enumere los siguientes elementos de la matriz 2D:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy bidimensional
+arr = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+
+# Utilizar np.ndenumerate() para iterar sobre los índices y elementos de la matriz
+for idx, x in np.ndenumerate(arr):
+  print(idx, x)
+
+----------------------------------NumPy Joining Array---------------------------------
 
 
 
