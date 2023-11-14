@@ -494,9 +494,46 @@ print(y.base)
 
 ------------------------------NumPy Array Shape---------------------------------------
 
+Forma de una matriz
+La forma de una matriz es el número de elementos en cada dimensión.
+
+Obtener la forma de una matriz
+Las matrices NumPy tienen un atributo llamado shapeque devuelve una tupla y cada índice tiene el número de elementos correspondientes.
+
+-Ejemplo 1
+Imprima la forma de una matriz 2-D:
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy bidimensional a partir de una lista de listas
+arr = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+
+# Imprimir la forma (shape) de la matriz
+print(arr.shape)
+Nota: El ejemplo anterior devuelve (2, 4), lo que significa que la matriz tiene 2 dimensiones, donde la primera dimensión tiene 2 elementos y la segunda tiene 4.
+
+-Ejemplo 2
+Cree una matriz con 5 dimensiones usando ndminun vector con valores 1,2,3,4 y verifique que la última dimensión tenga el valor 4:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear un arreglo NumPy unidimensional con una dimensión mínima de 5
+arr = np.array([1, 2, 3, 4], ndmin=5)
+
+# Imprimir el arreglo
+print(arr)
+
+# Imprimir la forma (shape) del arreglo
+print('shape of array :', arr.shape)
+
+¿Qué representa la tupla de forma?
+Los números enteros en cada índice indican la cantidad de elementos que tiene la dimensión correspondiente.
+
+En el ejemplo anterior en el índice 4 tenemos el valor 4, por lo que podemos decir que la quinta (4 + 1) dimensión tiene 4 elementos.
 
 
-
+--------------------------NumPy Array Reshaping-----------------------------
 
 
 
