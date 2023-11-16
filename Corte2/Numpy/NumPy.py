@@ -1097,6 +1097,197 @@ Nota: Hay alternativas similares a vstack()y dstack()disponibles como vsplit()y 
 
 ----------------------------NumPy Searching Arrays---------------------------------------
 
+Buscando matrices
+Puede buscar en una matriz un valor determinado y devolver los índices que coinciden.
+
+Para buscar una matriz, utilice el where()método.
+
+-Ejemplo 1
+Encuentre los índices donde el valor es 4:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy unidimensional
+arr = np.array([1, 2, 3, 4, 5, 4, 4])
+
+# Encontrar las posiciones donde el valor es igual a 4 utilizando np.where()
+x = np.where(arr == 4)
+
+# Imprimir las posiciones encontradas
+print(x)
+
+El ejemplo anterior devolverá una tupla:(array([3, 5, 6],)
+
+Lo que significa que el valor 4 está presente en los índices 3, 5 y 6.
+
+-Ejemplo 2
+Encuentre los índices donde los valores son pares:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy unidimensional
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+
+# Encontrar las posiciones donde los elementos son pares utilizando np.where()
+x = np.where(arr % 2 == 0)
+
+# Imprimir las posiciones encontradas
+print(x)
+
+-Ejemplo 3
+Encuentre los índices donde los valores son impares:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy unidimensional
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+
+# Encontrar las posiciones donde los elementos son impares utilizando np.where()
+x = np.where(arr % 2 == 1)
+
+# Imprimir las posiciones encontradas
+print(x)
+
+Búsqueda ordenada
+Existe un método llamado searchsorted()que realiza una búsqueda binaria en la matriz y devuelve el índice donde se insertaría el valor especificado para mantener el orden de búsqueda.
+
+Se supone que el searchsorted()método se utiliza en matrices ordenadas.
+
+-Ejemplo 4
+Encuentre los índices donde se debe insertar el valor 7:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy ordenada
+arr = np.array([6, 7, 8, 9])
+
+# Encontrar el índice donde debería insertarse el valor 7 utilizando np.searchsorted()
+x = np.searchsorted(arr, 7)
+
+# Imprimir el índice encontrado
+print(x)
+
+Ejemplo explicado: el número 7 debe insertarse en el índice 1 para seguir siendo el orden de clasificación.
+
+El método inicia la búsqueda desde la izquierda y devuelve el primer índice donde el número 7 ya no es mayor que el siguiente valor.
+
+Buscar desde el lado derecho
+De forma predeterminada, se devuelve el índice más a la izquierda, 
+pero side='right´ en su lugar podemos devolver el índice más a la derecha.
+
+-Ejemplo 5
+Encuentre los índices donde se debe insertar el valor 7, comenzando desde la derecha:
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy ordenada
+arr = np.array([6, 7, 8, 9])
+
+# Encontrar el índice derecho donde debería insertarse el valor 7 utilizando np.searchsorted()
+x = np.searchsorted(arr, 7, side='right')
+
+# Imprimir el índice derecho encontrado
+print(x)
+
+Ejemplo explicado: el número 7 debe insertarse en el índice 2 para seguir siendo el orden de clasificación.
+
+El método inicia la búsqueda desde la derecha y devuelve el primer índice donde el número 7 ya no es menor que el siguiente valor.
+
+Múltiples valores
+Para buscar más de un valor, utilice una matriz con los valores especificados.
+
+-Ejemplo 6
+Encuentre los índices donde se deben insertar los valores 2, 4 y 6:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy ordenada
+arr = np.array([1, 3, 5, 7])
+
+# Encontrar los índices donde deberían insertarse los valores 2, 4 y 6 utilizando np.searchsorted()
+x = np.searchsorted(arr, [2, 4, 6])
+
+# Imprimir los índices encontrados
+print(x)
+
+----------------------------NumPy Sorting Arrays---------------------------------
+
+Ordenar matrices
+Ordenar significa poner elementos en una secuencia ordenada .
+
+Secuencia ordenada es cualquier secuencia que tiene un orden correspondiente a elementos, como numérico o alfabético, ascendente o descendente.
+
+El objeto NumPy ndarray tiene una función llamada sort()que ordenará una matriz específica.
+
+-Ejemplo 1
+Ordena la matriz:
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy
+arr = np.array([3, 2, 0, 1])
+
+# Ordenar la matriz de forma ascendente utilizando np.sort()
+sorted_arr = np.sort(arr)
+
+# Imprimir la matriz ordenada
+print(sorted_arr)
+
+Nota: Este método devuelve una copia de la matriz, sin modificar la matriz original.
+
+También puedes ordenar matrices de cadenas o cualquier otro tipo de datos:
+
+-Ejemplo 2
+Ordene la matriz alfabéticamente:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy de cadenas
+arr = np.array(['banana', 'cherry', 'apple'])
+
+# Ordenar la matriz de forma alfabética (lexicográfica) utilizando np.sort()
+sorted_arr = np.sort(arr)
+
+# Imprimir la matriz ordenada
+print(sorted_arr)
+
+-Ejemplo 3
+Ordenar una matriz booleana:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy de booleanos
+arr = np.array([True, False, True])
+
+# Ordenar la matriz utilizando np.sort()
+sorted_arr = np.sort(arr)
+
+# Imprimir la matriz ordenada
+print(sorted_arr)
+
+Ordenar una matriz 2-D
+Si utiliza el método sort() en una matriz 2-D, ambas matrices se ordenarán:
+
+-Ejemplo 4
+Ordenar una matriz 2-D:
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy bidimensional
+arr = np.array([[3, 2, 4], [5, 0, 1]])
+
+# Ordenar la matriz a lo largo del último eje (columnas) utilizando np.sort()
+sorted_arr = np.sort(arr)
+
+# Imprimir la matriz ordenada
+print(sorted_arr)
 
 
 
