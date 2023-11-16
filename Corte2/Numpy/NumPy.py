@@ -1289,13 +1289,138 @@ sorted_arr = np.sort(arr)
 # Imprimir la matriz ordenada
 print(sorted_arr)
 
+-----------------------NumPy Filter Array-----------------------------
 
+Filtrado de matrices
+Obtener algunos elementos de una matriz existente y crear una nueva matriz a partir de ellos se llama filtrado .
 
+En NumPy, filtra una matriz usando una lista de índice booleano .
 
+Una lista de índices booleanos es una lista de valores booleanos correspondientes a índices en la matriz.
 
+Si el valor en un índice es Trueese elemento está contenido en la matriz filtrada, si el valor en ese índice es Falseese elemento se excluye de la matriz filtrada.
 
+-Ejemplo 1
+Cree una matriz a partir de los elementos del índice 0 y 2:
 
+  # Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
 
+# Crear una matriz NumPy unidimensional
+arr = np.array([41, 42, 43, 44])
+
+# Crear una lista booleana
+x = [True, False, True, False]
+
+# Seleccionar elementos de arr donde los valores correspondientes en x son True
+newarr = arr[x]
+
+# Imprimir el nuevo array
+print(newarr)
+
+El ejemplo anterior devolverá [41, 43], ¿por qué?
+
+Porque la nueva matriz contiene solo los valores donde la matriz de filtro tenía el valor True, en este caso, índice 0 y 2.
+
+Creando la matriz de filtros
+En el ejemplo anterior codificamos los valores True y False, pero el uso común es crear una matriz de filtros basada en condiciones.
+
+-Ejemplo 2
+Cree una matriz de filtros que devolverá solo valores superiores a 42:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy unidimensional
+arr = np.array([41, 42, 43, 44])
+
+# Crear una lista booleana usando un bucle for
+filter_arr = []
+
+# Recorrer cada elemento en arr
+for element in arr:
+    # Si el elemento es mayor que 42, establecer el valor en True, de lo contrario, en False
+    if element > 42:
+        filter_arr.append(True)
+    else:
+        filter_arr.append(False)
+
+# Utilizar la lista booleana para seleccionar elementos de arr
+newarr = arr[filter_arr]
+
+# Imprimir la lista booleana y el nuevo array
+print(filter_arr)
+print(newarr)
+
+-Ejemplo 3
+Cree una matriz de filtros que devolverá solo elementos pares de la matriz original:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy unidimensional
+arr = np.array([1, 2, 3, 4, 5, 6, 7])
+
+# Crear una lista booleana usando un bucle for
+filter_arr = []
+
+# Recorrer cada elemento en arr
+for element in arr:
+    # Si el elemento es completamente divisible por 2, establecer el valor en True, de lo contrario, en False
+    if element % 2 == 0:
+        filter_arr.append(True)
+    else:
+        filter_arr.append(False)
+
+# Utilizar la lista booleana para seleccionar elementos de arr
+newarr = arr[filter_arr]
+
+# Imprimir la lista booleana y el nuevo array
+print(filter_arr)
+print(newarr)
+
+Crear filtro directamente desde la matriz
+El ejemplo anterior es una tarea bastante común en NumPy y NumPy proporciona una buena manera de abordarla.
+
+Podemos sustituir directamente la matriz en lugar de la variable iterable en nuestra condición y funcionará tal como esperamos.
+
+-Ejemplo 4
+Cree una matriz de filtros que devolverá solo valores superiores a 42:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy unidimensional
+arr = np.array([41, 42, 43, 44])
+
+# Crear una lista booleana directamente usando una expresión booleana
+filter_arr = arr > 42
+
+# Utilizar la lista booleana para seleccionar elementos de arr
+newarr = arr[filter_arr]
+
+# Imprimir la lista booleana y el nuevo array
+print(filter_arr)
+print(newarr)
+
+-Ejemplo 5
+Cree una matriz de filtros que devolverá solo elementos pares de la matriz original:
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy unidimensional
+arr = np.array([1, 2, 3, 4, 5, 6, 7])
+
+# Crear una lista booleana directamente usando una expresión booleana
+filter_arr = arr % 2 == 0
+
+# Utilizar la lista booleana para seleccionar elementos de arr
+newarr = arr[filter_arr]
+
+# Imprimir la lista booleana y el nuevo array
+print(filter_arr)
+print(newarr)
 
 
 
