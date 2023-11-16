@@ -952,11 +952,150 @@ arr = np.dstack((arr1, arr2))
 # Imprimir la matriz resultante
 print(arr)
 
-------------------------------Matriz de división NumPy---------------------------
+------------------------------NumPy Splitting Array---------------------------
 
+Dividir matrices NumPy
+Dividir es una operación inversa a unir.
 
+La unión fusiona varias matrices en una y la división divide una matriz en varias.
 
+Usamos array_split()para dividir matrices, le pasamos la matriz que queremos dividir y el número de divisiones.
 
+-Ejemplo 1
+Divida la matriz en 3 partes:
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy unidimensional
+arr = np.array([1, 2, 3, 4, 5, 6])
+
+# Dividir la matriz en tres partes utilizando np.array_split()
+newarr = np.array_split(arr, 3)
+
+# Imprimir las matrices resultantes
+print(newarr)
+
+Nota: El valor de retorno es una lista que contiene tres matrices.
+
+Si la matriz tiene menos elementos de los necesarios, se ajustará desde el final en consecuencia.
+
+-Ejemplo 2
+Divida la matriz en 4 partes:
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy unidimensional
+arr = np.array([1, 2, 3, 4, 5, 6])
+
+# Dividir la matriz en cuatro partes utilizando np.array_split()
+newarr = np.array_split(arr, 4)
+
+# Imprimir las matrices resultantes
+print(newarr)
+
+Nota: También tenemos el método split()disponible, 
+pero no ajustará los elementos cuando haya menos elementos en la matriz fuente para dividir como en el ejemplo anterior, 
+array_split()funcionó correctamente pero split()fallaría.
+
+Dividir en matrices
+El valor de retorno del array_split()método es una matriz que contiene cada una de las divisiones como una matriz.
+
+Si divide una matriz en 3 matrices, puede acceder a ellas desde el resultado como cualquier elemento de la matriz:
+
+-Ejemplo 3
+Acceda a las matrices divididas:
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy unidimensional
+arr = np.array([1, 2, 3, 4, 5, 6])
+
+# Dividir la matriz en tres partes utilizando np.array_split()
+newarr = np.array_split(arr, 3)
+
+# Imprimir cada parte por separado
+print(newarr[0])
+print(newarr[1])
+print(newarr[2])
+
+División de matrices 2-D
+Utilice la misma sintaxis al dividir matrices 2D.
+
+Utilice el array_split()método, pase la matriz que desea dividir y la cantidad de divisiones que desea realizar.
+
+-Ejemplo 4
+Divida la matriz 2-D en tres matrices 2-D.
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy bidimensional
+arr = np.array([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12]])
+
+# Dividir la matriz en tres partes a lo largo del eje 0 utilizando np.array_split()
+newarr = np.array_split(arr, 3)
+
+# Imprimir las matrices resultantes
+print(newarr)
+
+El ejemplo anterior devuelve tres matrices 2-D.
+
+Veamos otro ejemplo, esta vez cada elemento de las matrices 2D contiene 3 elementos.
+
+-Ejemplo 5
+Divida la matriz 2-D en tres matrices 2-D.
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy bidimensional
+arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15], [16, 17, 18]])
+
+# Dividir la matriz en tres partes a lo largo del eje 0 utilizando np.array_split()
+newarr = np.array_split(arr, 3)
+
+# Imprimir las matrices resultantes
+print(newarr)
+
+El ejemplo anterior devuelve tres matrices 2-D.
+
+Además, puede especificar en qué eje desea realizar la división.
+
+El siguiente ejemplo también devuelve tres matrices 2D, pero están divididas a lo largo de la fila (eje=1).
+
+-Ejemplo 6
+Divida la matriz 2D en tres matrices 2D a lo largo de filas.
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy bidimensional
+arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15], [16, 17, 18]])
+
+# Dividir la matriz en tres partes a lo largo del eje 1 utilizando np.array_split()
+newarr = np.array_split(arr, 3, axis=1)
+
+# Imprimir las matrices resultantes
+print(newarr)
+
+Una solución alternativa es usar hsplit()el opuesto de hstack()
+
+-Ejemplo 7
+Utilice el hsplit()método para dividir la matriz 2D en tres matrices 2D a lo largo de filas.
+
+# Importar la biblioteca NumPy con el alias 'np'
+import numpy as np
+
+# Crear una matriz NumPy bidimensional
+arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15], [16, 17, 18]])
+
+# Dividir la matriz en tres partes a lo largo del eje 1 utilizando np.hsplit()
+newarr = np.hsplit(arr, 3)
+
+# Imprimir las matrices resultantes
+print(newarr)
+
+Nota: Hay alternativas similares a vstack()y dstack()disponibles como vsplit()y dsplit().
+
+----------------------------NumPy Searching Arrays---------------------------------------
 
 
 
